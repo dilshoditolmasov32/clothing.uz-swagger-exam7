@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* Global Style */
+@import "~react-image-gallery/styles/css/image-gallery.css";
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  font-family: "Roboto";
+  --gold: #fde047;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url(./assets/font-family/Roboto-Regular.ttf);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #e0e0e0;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-track:hover {
+  background: #555;
+}
+
+
+:root {
+  --gold: #fde047;
+}
+
+/* Additional CSS rules for styling your React components */
+
+@layer base {
+  button {
+    @apply border border-black rounded-xl px-5 py-1;
+  }
+}
+
+.react-rater-star.is-active-half:before {
+  color: var(--gold) !important;
+}
+
+.react-rater-star.is-active {
+  color: var(--gold) !important;
+}
