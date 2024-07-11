@@ -285,7 +285,7 @@ export default function ServiceModal({ open, setOpen, update }) {
                     name="made_in"
                     as={TextField}
                     type="text"
-                    label="Country of Manufacture"
+                    label="Country  "
                     fullWidth
                     variant="outlined"
                     margin="normal"
