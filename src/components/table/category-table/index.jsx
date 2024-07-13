@@ -22,7 +22,7 @@ export default function BasicTable({ data }) {
     try {
       const response = await categoreis.delete(id);
       if (response.status === 200 || response.status === 201) {
-        toast.info("Ma'lumot muvaqqiyati o'chirildi.");
+        toast.success("Ma'lumot muvaqqiyati o'chirildi.");
         setOpen(false)
         setTimeout(() => {
           window.location.reload();
