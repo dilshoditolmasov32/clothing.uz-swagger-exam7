@@ -58,7 +58,5 @@ export const productValidationSchema = Yup.object().shape({
   description: Yup.string().required("Description is required"),
   made_in: Yup.string().required("Made in is required"),
   product_name: Yup.string().required("Product name is required"),
-  size: Yup.string()
-    .matches(/^(S|M|L|XL|XXL)$/, "Size must be one of S, M, L, XL, XXL")
-    .required("Size is required"),
+  size: Yup.string().required("Size is required"),
 });

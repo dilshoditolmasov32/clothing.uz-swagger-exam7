@@ -8,6 +8,7 @@ import "swiper/css/pagination";
 import http from "../../api/config";
 import { FaEdit } from "react-icons/fa";
 import Modal from '../modal/products-modal'
+
 const Index = () => {
   const { id } = useParams();
   const [productData, setProductData] = useState({});
@@ -24,6 +25,8 @@ const Index = () => {
   useEffect(() => {
     getProductDetail();
   }, [id]);
+
+ 
 
   const openModal = () => {
     setUpdateData(productData);
@@ -45,7 +48,7 @@ const Index = () => {
               <div className="lg:col-span-3 w-full lg:sticky top-0 text-center">
                 <div className="px-4 py-10 rounded-lg shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] relative">
                   <img
-                    src={productData?.image_url}
+                    src={productData?.image_url[2]}
                     alt="Product"
                     className="w-3/4 rounded object-cover mx-auto"
                   />

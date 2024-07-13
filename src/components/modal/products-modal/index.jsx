@@ -25,6 +25,7 @@ import categoreis from "../../../api/categoreis";
 const defaultTheme = createTheme();
 
 export default function Index({ open, setOpen, updateData }) {
+  console.log("edit", updateData)
   const [data, setData] = useState([]);
 
   const initialValues = {
@@ -62,8 +63,25 @@ export default function Index({ open, setOpen, updateData }) {
         ...values,
         color: values.color.split(",").map((color) => color.trim()),
         size: values.size.split(",").map((size) => size.trim())
+      
       };
 
+  if (updateData) {
+    try {
+      const result = await product.update(payload);
+      if (result.status===201) {
+        toast.success("Ma'lumot muvaqqiyati uzgartirildi");
+        setOpen(false)
+        setTimeout(() => {
+          window.location.reload();
+        }, 1000);
+      }
+    } catch (error) {
+      setOpen(false)
+      toast.error(error.message);
+      toast.info("Update swaggerda ham ishlamayabdi");
+    }
+  } else {
     try {
       const result = await product.create(payload);
       if (result.status===201) {
@@ -71,12 +89,13 @@ export default function Index({ open, setOpen, updateData }) {
         setOpen(false)
         setTimeout(() => {
           window.location.reload();
-        }, 1500);
+        }, 1000);
       }
     } catch (error) {
       setOpen(false)
       toast.error(error.message);
     }
+  }
 
     setSubmitting(false);
   };

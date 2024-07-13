@@ -15,14 +15,13 @@ import { toast } from "react-toastify";
 const defaultTheme = createTheme();
 
 export default function Index({ open, setOpen, updateData }) {
-  console.log(updateData)
 
   const initialValues = {
     category_name: updateData?.category_name || "",
   };
 
   const handleSubmit = async (values, { setSubmitting }) => {
-    console.log(values)
+  
     if (updateData) {
       const payload = {
         category_id: updateData?.category_id,
