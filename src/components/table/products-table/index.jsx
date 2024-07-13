@@ -9,11 +9,11 @@ import Paper from "@mui/material/Paper";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import { Button as MUIButton } from "@mui/material";
-import { toast } from "react-toastify";
-import Modal from "../../modal/worker-list-modal";
 import { useState } from "react";
-import product from "../../../api/product";
+import { toast } from "react-toastify";
 import { NavLink } from "react-router-dom";
+import Modal from "../../modal/products-modal";
+import product from "../../../api/product";
 
 export default function BasicTable({ data }) {
   const [open, setOpen] = useState(false);
@@ -34,14 +34,9 @@ export default function BasicTable({ data }) {
     }
   };
 
-  const openModal = (item) => {
-    setUpdateData(item);
-    setOpen(true);
-  };
+ 
 
-  const singleProduct = (item) => {
-    console.log(item);
-  };
+  
 
   return (
     <>

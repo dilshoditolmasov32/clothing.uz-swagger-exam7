@@ -13,7 +13,7 @@ const Team = () => {
   const [data, setData] = useState([]);
   const [params, setParams] = useState({
     page: 1,
-    limit: 5,
+    limit: 3,
   });
   const [total, setTotal] = useState(0);
   const [page, setPage] = useState(1);
@@ -37,10 +37,10 @@ const Team = () => {
 
   const handleChange = (event, value) => {
     setParams({
-      ...params,
-      page: value,
-    });
-  };
+     ...params,
+     page:value
+    })
+   };
 
   return (
     <>
@@ -101,12 +101,12 @@ const Team = () => {
           <Table data={data} setData={setData} />
         </Box>
         <Pagination
-          count={total}
-          page={params.page}
-          onChange={handleChange}
-          className="flex justify-end m-5 text-3xl"
-          sx={{ fontSize: "50px", marginBottom: "20px" }}
-        />
+        className="flex justify-end m-5 text-3xl"
+        count={total}
+        page={params.page}
+        onChange={handleChange}
+        sx={{ marginTop: "25px", fontSize:"40px", }}
+      />
       </Box>
     </>
   );
