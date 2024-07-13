@@ -25,8 +25,8 @@ const Index = () => {
     getProductDetail();
   }, [id]);
 
-  const openModal = (item) => {
-    setUpdateData(item);
+  const openModal = () => {
+    setUpdateData(productData);
     setOpen(true);
   };
 

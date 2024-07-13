@@ -26,20 +26,20 @@ const defaultTheme = createTheme();
 
 export default function Index({ open, setOpen, updateData }) {
   const [data, setData] = useState([]);
-  
+
   const initialValues = {
-    age_max: "",
-    age_min: "",
-    category_id: "",
-    color: "",
-    cost: "",
-    count: "",
-    description: "",
-    discount: "",
-    made_in: "",
-    for_gender: "",
-    product_name: "",
-    size: "",
+    age_max:updateData?.age_max || "",
+    age_min: updateData?.age_min || "",
+    category_id:updateData?.category_id || "",
+    color:updateData?.color || "",
+    cost:updateData?.cost || "",
+    count: updateData?.count || "",
+    description: updateData?.description || "",
+    discount: updateData?.discount || "",
+    made_in: updateData?.made_in || "",
+    for_gender: updateData?.for_gender || "",
+    product_name: updateData?.product_name || "",
+    size:updateData?.size || "",
   };
 
   const getData = async () => {
