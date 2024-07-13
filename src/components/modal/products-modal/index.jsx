@@ -24,9 +24,9 @@ import categoreis from "../../../api/categoreis";
 
 const defaultTheme = createTheme();
 
-export default function ServiceModal({ open, setOpen, update }) {
+export default function Index({ open, setOpen, updateData }) {
   const [data, setData] = useState([]);
-
+  
   const initialValues = {
     age_max: "",
     age_min: "",
